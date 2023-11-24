@@ -1,0 +1,39 @@
+:root {
+    --clr-main: #1cbf5d;
+    --clr-dark-800: #171717;
+    --clr-dark-500: #8b8b8b;
+    --clr-dark-300: #d0d0d0;
+    --clr-dark-200: #e7e8e9;
+    --clr-dark-100: #f3f4f4;
+    --clr-light: #fff;
+    --clr-danger: #e50f0f;
+
+    --fz-700: 30px;
+    --fz-600: 24px;
+    --fz-500: 20px;
+    --fz-400: 18px;
+    --fz-300: 16px;
+    --fz-200: 14px;
+
+    --transition: 0.3s;
+
+    --radius-800: 24px;
+    --radius-600: 18px;
+    --radius-500: 16px;
+    --radius-400: 14px;
+    --radius-300: 10px;
+    --radius-200: 8px;
+    --radius-100: 6px;
+
+    --content-width: 1124px;
+    --content-offset: 40px;
+    --content-padding: 14px;
+
+    --container-width: calc(var(--content-width) + (2 * var(--content-padding)));
+
+    --breakpoint-desktop: 1200px;
+    --breakpoint-tablet: 980px;
+    --breakpoint-medium: 789px;
+    --breakpoint-mobile: 500px;
+    --breakpoint-mobile-sm: 425px;
+}

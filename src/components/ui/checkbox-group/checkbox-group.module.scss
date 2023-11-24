@@ -1,0 +1,58 @@
+@import 'assets/styles/base/mixins';
+
+.inputGroup {
+    --clr-accent: #1cbf5d40;
+
+    @include flex-v-center;
+
+    .label {
+        font-size: var(--fz-300);
+        font-weight: 500;
+        color: var(--clr-dark-800);
+        cursor: pointer;
+    }
+
+    .checkbox {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+
+        & + label {
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+        }
+
+        & + label::before {
+            @include border(var(--clr-dark-500));
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            flex-grow: 0;
+            border-radius: var(--radius-200);
+            margin-right: 12px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 60% 60%;
+            transition: var(--transition);
+        }
+
+        &:checked + label::before {
+            border-color: var(--clr-main);
+            background-color: var(--clr-main);
+            background-image: url('../../../assets/images/check.svg');
+        }
+
+        &:focus + label::before {
+            box-shadow: 0 0 0 2px var(--clr-accent);
+            transition: var(--transition);
+        }
+
+        &:not(:disabled):not(:checked) + label:hover::before {
+            border-color: var(--clr-accent);
+            transition: var(--transition);
+        }
+    }
+}

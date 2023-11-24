@@ -1,0 +1,100 @@
+@mixin font-face($font-family, $url, $weight, $style: 'normal') {
+    @font-face {
+        font-family: '#{$font-family}';
+        src: url('assets/fonts/#{$url}.woff2') format('woff2');
+        font-weight: #{$weight};
+        font-display: swap;
+        font-style: $style;
+    }
+}
+
+@mixin flex-v-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-h-center {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flex-all-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-all-sb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin text($fz, $clr, $lh, $fw: 400) {
+    font-size: $fz;
+    color: $clr;
+    line-height: $lh;
+    font-weight: $fw;
+    text-wrap: balance;
+}
+
+@mixin border($clr, $direction: null, $width: 1px) {
+    $border-style: solid;
+
+    @if $direction == 'top' {
+        border-top: $width $border-style $clr;
+    } @else if $direction == 'right' {
+        border-right: $width $border-style $clr;
+    } @else if $direction == 'bottom' {
+        border-bottom: $width $border-style $clr;
+    } @else if $direction == 'left' {
+        border-left: $width $border-style $clr;
+    } @else {
+        border: $width $border-style $clr;
+    }
+}
+
+@mixin hover {
+    transition: var(--transition);
+
+    &:hover {
+        transition: var(--transition);
+        @content;
+    }
+}
+
+@mixin respond($breakpoint) {
+    @if $breakpoint==desktop {
+        @media only screen and (max-width: var(--breakpoint-desktop)) {
+            @content;
+        }
+    }
+    @if $breakpoint==tablet {
+        @media only screen and (max-width: var(--breakpoint-tablet)) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==medium {
+        @media only screen and (max-width: var(--breakpoint-medium)) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==mobile {
+        @media only screen and (max-width: var(--breakpoint-mobile)) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==mobile-sm {
+        @media only screen and (max-width: var(--breakpoint-mobile-sm)) {
+            @content;
+        }
+    }
+}

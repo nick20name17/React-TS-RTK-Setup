@@ -1,0 +1,52 @@
+@import 'assets/styles/base/mixins';
+
+.inputGroup {
+    @include flex-column;
+    row-gap: 12px;
+
+    .label {
+        font-size: var(--fz-400);
+        font-weight: 500;
+        color: var(--clr-dark-500);
+    }
+
+    .input {
+        @include border(var(--clr-dark-500));
+
+        padding: 18px;
+        font-size: var(--fz-300);
+        font-weight: 500;
+        border-radius: var(--radius-200);
+        background-color: var(--clr-light);
+
+        &::placeholder {
+            color: var(--clr-dark-500);
+        }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus {
+            -webkit-text-fill-color: var(--clr-dark-800);
+            -webkit-box-shadow: 0 0 0px 40rem var(--clr-light) inset;
+        }
+
+        &:focus {
+            outline: 1px solid var(--clr-dark-800);
+        }
+    }
+
+    .invalidInput {
+        outline: 1px solid var(--clr-danger);
+    }
+
+    .error {
+        font-size: var(--fz-200);
+        color: var(--clr-danger);
+    }
+
+    &:focus-within {
+        .label {
+            color: var(--clr-dark-800);
+        }
+    }
+}

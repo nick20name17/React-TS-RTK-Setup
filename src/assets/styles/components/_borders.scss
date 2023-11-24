@@ -1,0 +1,16 @@
+.border {
+	@include border(var(--clr-dark-300));
+}
+
+.border-top {
+	@include border(var(--clr-dark-300), top);
+}
+.border-right {
+	@include border(var(--clr-dark-300), right);
+}
+.border-bottom {
+	@include border(var(--clr-dark-300), bottom);
+}
+.border-left {
+	@include border(var(--clr-dark-300), left);
+}

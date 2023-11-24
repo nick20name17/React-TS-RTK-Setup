@@ -1,0 +1,13 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    max-width: var(--container-width);
+    padding: 0 var(--content-padding);
+    margin: 0 auto;
+}
+
+.section {
+    margin-top: var(--content-offset);
+}

@@ -1,0 +1,11 @@
+.radius {
+    &_300 {
+        border-radius: var(--radius-300);
+    }
+    &_200 {
+        border-radius: var(--radius-200);
+    }
+    &_100 {
+        border-radius: var(--radius-100);
+    }
+}
